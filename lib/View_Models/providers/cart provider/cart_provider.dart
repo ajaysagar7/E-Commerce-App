@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:logger/logger.dart';
@@ -104,9 +106,10 @@ class CartProvider with ChangeNotifier, DatabaseHelper {
     notifyListeners();
   }
 
-
   Future<void> removeFromCart({required int id}) async {
     await deleteCartFromDatabase(id: id)
         .then((value) => Fluttertoast.showToast(msg: "deleted from carts"));
   }
+
+ 
 }

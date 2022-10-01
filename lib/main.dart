@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(create: (c) => CategoreisProvider()),
           ChangeNotifierProvider(create: (c) => CartProvider()),
-          // ChangeNotifierProvider(create: (c) => ProductsProvider()),
+          // StreamProvider(create: (c) => context.read<CartProvider>().getListByUsingStream(), initialData: const []),
           ChangeNotifierProvider(create: (c) => WishListProvider()),
           ChangeNotifierProxyProvider<WishListProvider, ProductsProvider>(
             create: (c) => ProductsProvider(),
